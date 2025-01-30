@@ -1,6 +1,8 @@
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -11,10 +13,11 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     background-color: black;
+    padding: 0 20px;
 }
 
 nav ul {
@@ -24,7 +27,7 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    margin: 0 23px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -60,26 +63,16 @@ nav ul li a:hover:after {
     left: 0;
 }
 
-@media screen and (max-height: 300px) {
-    ul {
-        margin-top: 40px;
-    }
-}
-
-
 nav ul li a:hover {
     color: white;
     font-size: 1.01rem;
 }
-
-
 
 main hr {
     border: 0;
     background: #c1f329d1;
     height: 1.2px;
     margin: 40px 84px;
-
 }
 
 .left {
@@ -89,14 +82,16 @@ main hr {
 
 .firstsection {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 80px 0;
+    justify-content: center; /* Center align items horizontally */
+    align-items: center; /* Center align items vertically */
+    margin: 40px 0; /* Move the section upwards */
+    flex-wrap: wrap;
+    height: calc(100vh - 80px); /* Adjust height to fit within the viewport */
+    text-align: center; /* Ensure text is centered */
 }
 
 .firstsection>div {
     width: 30%;
-
 }
 
 .leftsection {
@@ -104,10 +99,11 @@ main hr {
     margin: 70px 0;
 }
 
-
-.rightsection img {
-    width: 133%;
-    opacity: 0.7;
+.rightsection {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
 }
 
 .purple {
@@ -154,7 +150,6 @@ main hr {
 
 #services {
     padding: 36px 80px;
-
 }
 
 .services-list {
@@ -312,7 +307,6 @@ main hr {
     color: gray;
     width: 150px;
     font-size: 12px;
-
 }
 
 .contact-left {
@@ -350,7 +344,6 @@ main hr {
 .social-icons a:hover {
     color: #7ea702d1;
     transform: translateY(-5px);
-
 }
 
 .btn {
@@ -390,7 +383,7 @@ form .btn2 {
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 20px;
-    cursor: ponter;
+    cursor: pointer;
 }
 
 .copyright {
@@ -400,4 +393,181 @@ form .btn2 {
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .firstsection {
+        flex-direction: column;
+        text-align: center; /* Ensure text is centered */
+    }
+
+    .firstsection>div {
+        width: 80%;
+    }
+
+    .leftsection {
+        font-size: 2rem;
+    }
+
+    .rightsection {
+        width: 100%;
+    }
+
+    #about {
+        padding: 50px 20px;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .sub-title {
+        font-size: 40px;
+    }
+
+    #services {
+        padding: 20px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    #portfolio {
+        padding: 20px;
+    }
+
+    .work-list {
+        grid-template-columns: 1fr;
+    }
+
+    .fourthsection {
+        padding: 20px;
+    }
+
+    .fourthsection h1 {
+        font-size: 2.5rem;
+    }
+
+    .fourthsection .box {
+        width: 100%;
+    }
+
+    .fourthsection .vertical {
+        margin: 0 20px;
+    }
+
+    .vertical-title,
+    .vertical-desc {
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+        padding: 20px;
+    }
+
+    .contact-right form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .left {
+        font-size: 1.5rem;
+    }
+
+    .leftsection {
+        font-size: 1.5rem;
+    }
+
+    .sub-title {
+        font-size: 30px;
+    }
+
+    .services-list div h2 {
+        font-size: 24px;
+    }
+
+    .services-list div p {
+        font-size: 12px;
+    }
+
+    .layer h3 {
+        font-size: 16px;
+    }
+
+    .layer p {
+        font-size: 12px;
+    }
+
+    .vertical-title,
+    .vertical-desc {
+        font-size: 12px;
+    }
+
+    .btn,
+    .btn.btn2 {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left {
+        font-size: 1.2rem;
+    }
+
+    .leftsection {
+        font-size: 1.2rem;
+    }
+
+    .sub-title {
+        font-size: 24px;
+    }
+
+    .services-list div h2 {
+        font-size: 20px;
+    }
+
+    .services-list div p {
+        font-size: 10px;
+    }
+
+    .layer h3 {
+        font-size: 14px;
+    }
+
+    .layer p {
+        font-size: 10px;
+    }
+
+    .vertical-title,
+    .vertical-desc {
+        font-size: 10px;
+    }
+
+    .btn,
+    .btn.btn2 {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
 }
